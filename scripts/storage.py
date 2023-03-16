@@ -34,6 +34,7 @@ class Scripts(scripts.Script):
         return [checkbox_save_to_db, database_name, collection_name]
 
     def postprocess(self, p, processed,checkbox_save_to_db,database_name,collection_name):
+        print("db-save: postprocess called")
         collection = get_collection(database_name, collection_name) if checkbox_save_to_db else None
         if collection is None:
             return True
